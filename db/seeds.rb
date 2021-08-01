@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+AdminQuestion.destroy_all
+
+AdminQuestion.create!([{
+    question: "What's the meaning of life, the universe and everything?",
+    answer: "42"
+}])
+
+puts "created admin questions"
