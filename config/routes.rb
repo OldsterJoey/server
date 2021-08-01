@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   scope '/api' do
     get '/questions', to: 'questions#index'
     post '/questions', to: 'questions#create'
-    get '/questions/:id', to: 'quesions#show'
-    put '/questions/:id', to: 'quesions#update'
-    delete '/questions/:id', to: 'quesions#destroy'
+    get '/questions/:id', to: 'questions#show'
+    put '/questions/:id', to: 'questions#update'
+    delete '/questions/:id', to: 'questions#destroy'
     get '/questions/random', to: 'questions#random'
   end
 end
