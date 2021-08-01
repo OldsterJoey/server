@@ -1,0 +1,2 @@
+class ChildProfile < ApplicationRecord
+end

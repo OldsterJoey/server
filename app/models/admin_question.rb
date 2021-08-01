@@ -1,0 +1,2 @@
+class AdminQuestion < ApplicationRecord
+end
