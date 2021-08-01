@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+    before_action :set_question, only: [:show]
     def index
         @questions = Question.all
         render json: @questions
@@ -13,8 +14,16 @@ class QuestionsController < ApplicationController
         end
     end
 
+    def show
+        render json: @question
+    end
+
     private
     def question_params
         params.permit(:question, :answer)
+    end
+
+    def set_question
+        @question = Question.find(params[:id])
     end
 end

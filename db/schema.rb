@@ -17,15 +17,6 @@ ActiveRecord::Schema.define(version: 2021_08_01_054540) do
 
   create_table "admin_profiles", force: :cascade do |t|
     t.string "name"
-    t.bigint "admin_question_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["admin_question_id"], name: "index_admin_profiles_on_admin_question_id"
-  end
-
-  create_table "admin_questions", force: :cascade do |t|
-    t.text "question"
-    t.string "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,6 +43,5 @@ ActiveRecord::Schema.define(version: 2021_08_01_054540) do
     t.index ["child_profile_id"], name: "index_wish_lists_on_child_profile_id"
   end
 
-  add_foreign_key "admin_profiles", "admin_questions"
   add_foreign_key "wish_lists", "child_profiles"
 end
