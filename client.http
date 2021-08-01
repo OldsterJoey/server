@@ -1,2 +1,19 @@
 ### Index Method
 GET http://localhost:3000/api/questions
+
+### Successfuly posts a question
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "question": "Peter piper picked a peck of pickled...",
+    "answer": "Peppers"
+}
+
+### Unsuccessfuly posts a joke
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "answer": "Peppers"
+}
