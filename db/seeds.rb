@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Question.destroy_all
-
 Question.create!([{
     question: "What's the meaning of life, the universe and everything?",
     answer: "42"
