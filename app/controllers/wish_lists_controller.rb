@@ -27,4 +27,3 @@ class WishListsController < ApplicationController
         @wish_list = wish_list.find(params[:id])
     end
 end
-

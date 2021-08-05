@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     get '/admin_profiles/:id', to: 'admin_profiles#show'
     put '/admin_profiles/:id', to: 'admin_profiles#update'
     delete '/admin_profiles/:id', to: 'admin_profiles#destroy'
+    # Child Profile Routes
+    get '/child_profiles', to: 'child_profiles#index'
+    post '/child_profiles', to: 'child_profiles#create'
+    get '/child_profiles/:id', to: 'child_profiles#show'
+    put '/child_profiles/:id', to: 'child_profiles#update'
+    delete '/child_profiles/:id', to: 'child_profiles#destroy'
     # Question Routes
     get '/questions', to: 'questions#index'
     post '/questions', to: 'questions#create'
