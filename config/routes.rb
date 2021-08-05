@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   scope '/api' do
+    # Admin Profile Routes
+    get '/admin_profiles', to: 'admin_profiles#index'
+    post '/admin_profiles', to: 'admin_profiles#create'
+    get '/admin_profiles/:id', to: 'admin_profiles#show'
+    put '/admin_profiles/:id', to: 'admin_profiles#update'
+    delete '/admin_profiles/:id', to: 'admin_profiles#destroy'
     # Question Routes
     get '/questions', to: 'questions#index'
     post '/questions', to: 'questions#create'

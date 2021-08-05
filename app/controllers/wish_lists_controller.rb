@@ -1,5 +1,5 @@
 class WishListsController < ApplicationController
-        before_action :set_wish_list, only: [:show]
+    before_action :set_wish_list, only: [:show]
     def index
         @wish_lists = wish_list.all
         render json: @wish_lists
@@ -27,3 +27,4 @@ class WishListsController < ApplicationController
         @wish_list = wish_list.find(params[:id])
     end
 end
+
