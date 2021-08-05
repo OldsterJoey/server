@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_04_064502) do
+ActiveRecord::Schema.define(version: 2021_08_05_042611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,5 +45,14 @@ ActiveRecord::Schema.define(version: 2021_08_04_064502) do
     t.index ["child_profile_id"], name: "index_wish_lists_on_child_profile_id"
   end
 
+  create_table "wishes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "wish_list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["wish_list_id"], name: "index_wishes_on_wish_list_id"
+  end
+
   add_foreign_key "wish_lists", "child_profiles"
+  add_foreign_key "wishes", "wish_lists"
 end
