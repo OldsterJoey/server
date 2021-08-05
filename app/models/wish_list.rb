@@ -1,3 +1,3 @@
 class WishList < ApplicationRecord
-  belongs_to :childprofile
+  belongs_to :child_profile
 end
