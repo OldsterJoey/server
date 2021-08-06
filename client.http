@@ -21,6 +21,7 @@ Content-Type: application/json
 ### Show question id: 1
 GET http://localhost:3000/api/questions/1
 
+### CHILDREN ROUTES
 ### Child Profile Index Method
 GET http://localhost:3000/api/child_profiles
 
@@ -32,14 +33,12 @@ Content-Type: application/json
     "name": "Molly"
 }
 
-### Show child id: 1
-
+### Show child id: 6
 GET http://localhost:3000/api/child_profiles/6
 Content-Type: application/json
 
 
-### Successfully updates Child Profile 1
-
+### Successfully updates Child Profile 3
 PUT http://localhost:3000/api/child_profiles/3
 Content-Type: application/json
 
@@ -48,5 +47,30 @@ Content-Type: application/json
 }
 
 ### successfully deletes child with id 1
-
 DELETE http://localhost:3000/api/child_profiles/3
+
+### WISHLISTS
+### Index Method for Wishlists
+
+GET http://localhost:3000/api/wish_lists
+
+### Successfuly posts a wishlist
+POST http://localhost:3000/api/wish_lists
+Content-Type: application/json
+
+{
+    "question": "Peter piper picked a peck of pickled...",
+    "answer": "Peppers"
+}
+
+### Unsuccessfuly posts a question
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "answer": "Peppers"
+}
+
+### Show question id: 1
+GET http://localhost:3000/api/questions/1
+ 
