@@ -20,9 +20,24 @@ ChildProfile.create!([{
     name: "Irina"
 }])
 
+puts "created child profile"
+
 WishList.create!([{
     name: "joeyswishlist",
     child_profile_id: 1
 }])
 
-puts "created child profile"
+puts "created wishlist"
+
+# Wish.create!([{
+#     name: "I wish for a pink bicycle",
+#     wish_list_id: 1
+# }])
+
+wishes_wish_list = [wish_list_id: 1]
+if WishList.all.length == 0 
+    wishes_wish_list.each do |wish|
+        WishList.create(wish_list_id: num+1)
+        puts "created wish"
+    end
+end
