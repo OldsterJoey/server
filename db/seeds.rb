@@ -12,3 +12,12 @@ Question.create!([{
 }])
  
 puts "created admin questions"
+
+ChildProfile.create!([{
+    name: "Joey"
+},
+{
+    name: "Irina"
+}])
+
+puts "created child profile"
