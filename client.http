@@ -21,6 +21,9 @@ Content-Type: application/json
 ### Show question id: 1
 GET http://localhost:3000/api/questions/1
 
+
+
+
 ### CHILDREN ROUTES
 ### Child Profile Index Method
 GET http://localhost:3000/api/child_profiles
@@ -49,6 +52,9 @@ Content-Type: application/json
 ### successfully deletes child with id 3
 DELETE http://localhost:3000/api/child_profiles/3
 
+
+
+
 ### WISHLISTS
 ### Index Method for Wishlists
 
@@ -75,6 +81,43 @@ Content-Type: application/json
 DELETE http://localhost:3000/api/wish_lists/2
 
 ### Successfully deletes wishlist 1000
-
- 
 DELETE http://localhost:3000/api/wish_lists/1000
+
+
+
+
+### WISHES
+### Index Method for Wishes
+
+GET http://localhost:3000/api/wishes
+
+### Successfuly posts a wish
+POST http://localhost:3000/api/wishes
+Content-Type: application/json
+
+{
+    "name": "doll",
+    "wish_list_id": 2
+}
+
+### adds another wish to the wishlist 2
+POST http://localhost:3000/api/wishes
+Content-Type: application/json
+
+{
+    "name": "fast rocket",
+    "wish_list_id": 2
+}
+
+### Successfully updates Wish 2
+PUT http://localhost:3000/api/wishes/2
+Content-Type: application/json
+
+{
+    "name": "snow rocket"
+}
+### Successfully deletes wishlist 2
+DELETE http://localhost:3000/api/wishes/2
+
+### Successfully deletes wishlist 1000
+DELETE http://localhost:3000/api/wishes/1000

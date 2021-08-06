@@ -2,7 +2,7 @@ class WishListsController < ApplicationController
     before_action :set_wish_list, only: [:show, :update, :destroy]
     def index
         @wish_lists = WishList.all
-        render json: @wish_lists
+        render json: @wish_lists, include:["wishes"]
     end
 
     def create

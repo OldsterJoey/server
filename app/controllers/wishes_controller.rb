@@ -1,5 +1,5 @@
 class WishesController < ApplicationController
-    before_action :set_wish, only: [:show]
+    before_action :set_wish, only: [:show, :update, :destroy]
     def index
         @wishes = Wish.all
         render json: @wishes
@@ -34,7 +34,7 @@ class WishesController < ApplicationController
 
     private
     def wish_params
-        params.permit(:id, :name, :wish_list_id)
+        params.permit(:id, :name, :wish, :wish_list_id)
     end
 
     def set_wish
