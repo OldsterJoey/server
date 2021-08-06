@@ -20,7 +20,7 @@ class WishListsController < ApplicationController
 
     private
     def wish_list_params
-        params.permit(:wish_list, :answer)
+        params.permit(:name, :child_profile_id)
     end
 
     def set_wish_list

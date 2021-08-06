@@ -20,7 +20,7 @@ class AdminProfilesController < ApplicationController
 
     private
     def admin_profile_params
-        params.permit(:admin_profile, :answer)
+        params.permit(:name)
     end
 
     def set_admin_profile
