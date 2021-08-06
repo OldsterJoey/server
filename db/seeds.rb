@@ -34,10 +34,10 @@ puts "created wishlist"
 #     wish_list_id: 1
 # }])
 
-wishes_wish_list = [wish_list_id: 1]
-if WishList.all.length == 0 
-    wishes_wish_list.each do |wish|
-        WishList.create(wish_list_id: num+1)
-        puts "created wish"
-    end
+# wishes_wish_list = [wish_list_id: 1]
+# if WishList.all.length == 0 
+#     wishes_wish_list.each do |wish|
+#         WishList.create(wish_list_id: num+1)
+#         puts "created wish"
+#     end
 end

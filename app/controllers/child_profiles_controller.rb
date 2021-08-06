@@ -20,7 +20,7 @@ class ChildProfilesController < ApplicationController
 
     private
     def child_profile_params
-        params.permit(:child_profile, :answer)
+        params.permit(:name, :wish_list_id)
     end
 
     def set_child_profile
