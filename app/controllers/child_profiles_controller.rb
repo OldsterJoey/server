@@ -1,12 +1,12 @@
 class ChildProfilesController < ApplicationController
     before_action :set_child_profile, only: [:show]
     def index
-        @child_profiles = child_profile.all
+        @child_profiles = ChildProfile.all
         render json: @child_profiles
     end
 
     def create
-        @child_profile = child_profile.create(child_profile_params)
+        @child_profile = ChildProfile.create(child_profile_params)
         if @child_profile.errors.any?
             render json: @child_profile.errors, status: :unprocessable_entity 
         else
@@ -24,6 +24,6 @@ class ChildProfilesController < ApplicationController
     end
 
     def set_child_profile
-        @child_profile = child_profile.find(params[:id])
+        @child_profile = ChildProfile.find(params[:id])
     end
 end
