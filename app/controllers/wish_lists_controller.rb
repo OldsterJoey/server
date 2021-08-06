@@ -1,5 +1,5 @@
 class WishListsController < ApplicationController
-    before_action :set_wish_list, only: [:show, :update, :delete]
+    before_action :set_wish_list, only: [:show, :update, :destroy]
     def index
         @wish_lists = WishList.all
         render json: @wish_lists
@@ -27,7 +27,7 @@ class WishListsController < ApplicationController
         @wish_list.delete
         render json: 204
     end
-    
+
     def show
         render json: @wish_list
     end

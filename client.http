@@ -46,7 +46,7 @@ Content-Type: application/json
     "name": "Jason"
 }
 
-### successfully deletes child with id 1
+### successfully deletes child with id 3
 DELETE http://localhost:3000/api/child_profiles/3
 
 ### WISHLISTS
@@ -59,18 +59,22 @@ POST http://localhost:3000/api/wish_lists
 Content-Type: application/json
 
 {
-    "question": "Peter piper picked a peck of pickled...",
-    "answer": "Peppers"
+    "name": "Wishlist",
+    "child_profile_id": 2
 }
 
-### Unsuccessfuly posts a question
-POST http://localhost:3000/api/questions
+### Successfully updates Wishlist 2
+PUT http://localhost:3000/api/wish_lists/2
 Content-Type: application/json
 
 {
-    "answer": "Peppers"
+    "name": "Christmas Wishlist",
+    "child_profile_id": 2
 }
+### Successfully deletes wishlist 2
+DELETE http://localhost:3000/api/wish_lists/2
 
-### Show question id: 1
-GET http://localhost:3000/api/questions/1
+### Successfully deletes wishlist 1000
+
  
+DELETE http://localhost:3000/api/wish_lists/1000
