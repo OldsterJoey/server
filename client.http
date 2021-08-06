@@ -20,3 +20,33 @@ Content-Type: application/json
 
 ### Show question id: 1
 GET http://localhost:3000/api/questions/1
+
+### Child Profile Index Method
+GET http://localhost:3000/api/child_profiles
+
+### Successfuly creates a new child
+POST http://localhost:3000/api/child_profiles
+Content-Type: application/json
+
+{
+    "name": "Molly"
+}
+
+### Show child id: 1
+
+GET http://localhost:3000/api/child_profiles/6
+Content-Type: application/json
+
+
+### Successfully updates Child Profile 1
+
+PUT http://localhost:3000/api/child_profiles/3
+Content-Type: application/json
+
+{
+    "name": "Jason"
+}
+
+### successfully deletes child with id 1
+
+DELETE http://localhost:3000/api/child_profiles/3
