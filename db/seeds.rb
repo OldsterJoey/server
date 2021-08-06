@@ -20,4 +20,9 @@ ChildProfile.create!([{
     name: "Irina"
 }])
 
+WishList.create!([{
+    name: "joeyswishlist",
+    child_profile_id: 1
+}])
+
 puts "created child profile"

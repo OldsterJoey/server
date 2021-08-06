@@ -1,12 +1,12 @@
 class WishListsController < ApplicationController
     before_action :set_wish_list, only: [:show]
     def index
-        @wish_lists = wish_list.all
+        @wish_lists = WishList.all
         render json: @wish_lists
     end
 
     def create
-        @wish_list = wish_list.create(wish_list_params)
+        @wish_list = WishList.create(wish_list_params)
         if @wish_list.errors.any?
             render json: @wish_list.errors, status: :unprocessable_entity 
         else
@@ -24,6 +24,6 @@ class WishListsController < ApplicationController
     end
 
     def set_wish_list
-        @wish_list = wish_list.find(params[:id])
+        @wish_list = WishList.find(params[:id])
     end
 end
