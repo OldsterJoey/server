@@ -1,6 +1,8 @@
 class AdminProfilesController < ApplicationController
     before_action :authenticate_user, except: [:index]
     before_action :set_admin_profile, only: [:show]
+    before_action :check_ownership, only: [:show, :update, :destroy]
+
     def index
         @admin_profiles = admin_profile.all
         render json: @admin_profiles
@@ -26,5 +28,11 @@ class AdminProfilesController < ApplicationController
 
     def set_admin_profile
         @admin_profile = admin_profile.find(params[:id])
+    end
+
+    def check_ownership
+        if current_user.id != @admin_profile.user.id
+            render json: {error: "You don't have permission to do that"}, status: 401
+        end
     end
 end

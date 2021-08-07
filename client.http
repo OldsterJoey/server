@@ -35,15 +35,16 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3N
 
 ### Show child id: 1
 
-GET http://localhost:3000/api/child_profiles/6
+GET http://localhost:3000/api/child_profiles/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3NTIsInN1YiI6M30.ET7m3ROb1PEkMK5zOGMdyCHBFpkdE96SbOdoLqdAJ1s
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
 
 ### Successfully updates Child Profile 1
 
-PUT http://localhost:3000/api/child_profiles/3
+PUT http://localhost:3000/api/child_profiles/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3NTIsInN1YiI6M30.ET7m3ROb1PEkMK5zOGMdyCHBFpkdE96SbOdoLqdAJ1s
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
+
 
 {
     "name": "Jason"
@@ -51,9 +52,8 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3N
 
 ### successfully deletes child with id 1
 
-DELETE http://localhost:3000/api/child_profiles/3
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3NTIsInN1YiI6M30.ET7m3ROb1PEkMK5zOGMdyCHBFpkdE96SbOdoLqdAJ1s
-
+DELETE http://localhost:3000/api/child_profiles/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
 
 ### Creates a user
 POST  http://localhost:3000/api/auth/sign_up
@@ -66,11 +66,11 @@ Content-Type: application/json
     "password_confirmation": "joey12321"
 }
 
-### Signs in to user with correct details
+### Signs in to user 1 with correct details
 POST  http://localhost:3000/api/auth/sign_in
 Content-Type: application/json
 
 {
-    "email": "joey3@test.com",
+    "email": "joey@test.com",
     "password": "joey12321"
 }
