@@ -50,3 +50,15 @@ Content-Type: application/json
 ### successfully deletes child with id 1
 
 DELETE http://localhost:3000/api/child_profiles/3
+
+
+### Creates a user
+POST  http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+    "username": "Joey2",
+    "email": "joey@test.com",
+    "password": "joey12321",
+    "password_confirmation": "joey12321"
+}
