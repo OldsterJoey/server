@@ -21,17 +21,15 @@ Content-Type: application/json
 ### Show question id: 1
 GET http://localhost:3000/api/questions/1
 
-
-
-
 ### CHILDREN ROUTES
+
 ### Child Profile Index Method
 GET http://localhost:3000/api/child_profiles
 
 ### Successfuly creates a new child
 POST http://localhost:3000/api/child_profiles
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3NTIsInN1YiI6M30.ET7m3ROb1PEkMK5zOGMdyCHBFpkdE96SbOdoLqdAJ1s
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
 
 {
     "name": "Molly"
@@ -56,11 +54,10 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4M
 
 ### successfully deletes child with id 3
 DELETE http://localhost:3000/api/child_profiles/3
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
 
+### WISHLIST ROUTES
 
-
-
-### WISHLISTS
 ### Index Method for Wishlists
 
 GET http://localhost:3000/api/wish_lists
@@ -88,10 +85,8 @@ DELETE http://localhost:3000/api/wish_lists/2
 ### Successfully deletes wishlist 1000
 DELETE http://localhost:3000/api/wish_lists/1000
 
+### WISH ROUTES
 
-
-
-### WISHES
 ### Index Method for Wishes
 
 GET http://localhost:3000/api/wishes
