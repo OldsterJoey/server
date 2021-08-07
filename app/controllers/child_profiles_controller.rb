@@ -1,4 +1,5 @@
 class ChildProfilesController < ApplicationController
+    before_action :authenticate_user, except: [:index]
     before_action :set_child_profile, only: [:show, :update, :destroy]
     def index
         @child_profiles = ChildProfile.all
@@ -6,7 +7,7 @@ class ChildProfilesController < ApplicationController
     end
 
     def create
-        @child_profile = ChildProfile.create(child_profile_params)
+        @child_profile = current_user.child_profiles.create(child_profile_params)
         if @child_profile.errors.any?
             render json: @child_profile.errors, status: :unprocessable_entity 
         else

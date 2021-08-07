@@ -1,4 +1,5 @@
 class AdminProfilesController < ApplicationController
+    before_action :authenticate_user, except: [:index]
     before_action :set_admin_profile, only: [:show]
     def index
         @admin_profiles = admin_profile.all
@@ -6,7 +7,7 @@ class AdminProfilesController < ApplicationController
     end
 
     def create
-        @admin_profile = admin_profile.create(admin_profile_params)
+        @admin_profile = current_user.admin_profiles.create(admin_profile_params)
         if @admin_profile.errors.any?
             render json: @admin_profile.errors, status: :unprocessable_entity 
         else

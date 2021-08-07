@@ -28,23 +28,16 @@ if AdminProfile.count == 0
     puts "created admin profiles"
 end
 
+if WishList.count == 0
+    WishList.create!(name: "joeyswishlist", child_profile_id: 1)
+    puts "created wishlist"
+end
 
-
-WishList.create!([{
-    name: "joeyswishlist",
-    child_profile_id: 1
-}])
-
-puts "created wishlist"
-
-Wish.create([{
-    name: "I wish for a pink bicycle",
-    wish_list_id: 1
-}, 
-{
-    name: "I wish for a nintendo",
-    wish_list_id: 1
-}])
+if Wish.count == 0
+    Wish.create(name: "I wish for a pink bicycle", wish_list_id: 1)
+    Wish.create(name: "I wish for a nintendo", wish_list_id: 1)
+    puts "created wishes"
+end
 
 # wishes_wish_list = [wish_list_id: 1]
 # if WishList.all.length == 0 

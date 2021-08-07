@@ -27,6 +27,7 @@ GET http://localhost:3000/api/child_profiles
 ### Successfuly creates a new child
 POST http://localhost:3000/api/child_profiles
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3NTIsInN1YiI6M30.ET7m3ROb1PEkMK5zOGMdyCHBFpkdE96SbOdoLqdAJ1s
 
 {
     "name": "Molly"
@@ -36,12 +37,13 @@ Content-Type: application/json
 
 GET http://localhost:3000/api/child_profiles/6
 Content-Type: application/json
-
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3NTIsInN1YiI6M30.ET7m3ROb1PEkMK5zOGMdyCHBFpkdE96SbOdoLqdAJ1s
 
 ### Successfully updates Child Profile 1
 
 PUT http://localhost:3000/api/child_profiles/3
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3NTIsInN1YiI6M30.ET7m3ROb1PEkMK5zOGMdyCHBFpkdE96SbOdoLqdAJ1s
 
 {
     "name": "Jason"
@@ -50,6 +52,7 @@ Content-Type: application/json
 ### successfully deletes child with id 1
 
 DELETE http://localhost:3000/api/child_profiles/3
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTE3NTIsInN1YiI6M30.ET7m3ROb1PEkMK5zOGMdyCHBFpkdE96SbOdoLqdAJ1s
 
 
 ### Creates a user
