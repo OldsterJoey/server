@@ -1,5 +1,8 @@
 class ChildProfilesController < ApplicationController
+    before_action :authenticate_user, except: [:index]
     before_action :set_child_profile, only: [:show, :update, :destroy]
+    before_action :check_ownership, only: [:show, :update, :destroy]
+    
     def index
         @child_profiles = ChildProfile.all
         # render json: @child_profiles, include: ["wish_list", "wishes"]
@@ -11,7 +14,7 @@ class ChildProfilesController < ApplicationController
     end
 
     def create
-        @child_profile = ChildProfile.create(child_profile_params)
+        @child_profile = current_user.child_profiles.create(child_profile_params)
         if @child_profile.errors.any?
             render json: @child_profile.errors, status: :unprocessable_entity 
         else
@@ -58,6 +61,12 @@ class ChildProfilesController < ApplicationController
         @child_profile = ChildProfile.find(params[:id])
         rescue
             render json: {error: "Child is not found"}, status: 404
+        end
+    end
+
+    def check_ownership
+        if current_user.id != @child_profile.user.id
+            render json: {error: "You don't have permission to do that"}, status: 401
         end
     end
 end
