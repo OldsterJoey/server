@@ -62,3 +62,12 @@ Content-Type: application/json
     "password": "joey12321",
     "password_confirmation": "joey12321"
 }
+
+### Signs in to user with correct details
+POST  http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{
+    "email": "joey3@test.com",
+    "password": "joey12321"
+}

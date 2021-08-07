@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     # User Routes
     scope '/auth' do
       post '/sign_up', to: 'users#create'
-      
+      post '/sign_in', to: 'users#sign_in'
+
     end
     # Admin Profile Routes
     get '/admin_profiles', to: 'admin_profiles#index'

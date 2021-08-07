@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+if User.count == 0
+    User.create(username: "Joey", email: "joey@test.com", password: "joey12321", password_confirmation: "joey12321")
+    User.create(username: "Irina", email: "irina@test.com", password: "irina12321", password_confirmation: "irina12321")
+end
+
 Question.create!([{
     question: "What's the meaning of life, the universe and everything?",
     answer: "42"
