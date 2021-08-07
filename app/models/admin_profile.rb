@@ -1,3 +1,4 @@
 class AdminProfile < ApplicationRecord
-  has_many: questions
+  has_many :questions
+  belongs_to :user
 end

@@ -11,21 +11,24 @@ if User.count == 0
     User.create(username: "Irina", email: "irina@test.com", password: "irina12321", password_confirmation: "irina12321")
 end
 
-Question.create!([{
-    question: "What's the meaning of life, the universe and everything?",
-    answer: "42"
-}])
- 
-puts "created admin questions"
+if Question.count == 0
+    Question.create(question: "What's the meaning of life, the universe and everything?", answer: "42") 
+    puts "created admin questions"
+end
 
-ChildProfile.create!([{
-    name: "Joey"
-},
-{
-    name: "Irina"
-}])
+if ChildProfile.count == 0
+    ChildProfile.create(user_id: 1, name: "Joey")
+    ChildProfile.create(user_id: 2, name: "Irina")
+    puts "created child profiles"
+end
 
-puts "created child profile"
+if AdminProfile.count == 0
+    AdminProfile.create(user_id: 1, name: "JoeyAdmin")
+    AdminProfile.create(user_id: 2, name: "IrinaAdmin")
+    puts "created admin profiles"
+end
+
+
 
 WishList.create!([{
     name: "joeyswishlist",
@@ -34,7 +37,7 @@ WishList.create!([{
 
 puts "created wishlist"
 
-Wish.create!([{
+Wish.create([{
     name: "I wish for a pink bicycle",
     wish_list_id: 1
 }, 
