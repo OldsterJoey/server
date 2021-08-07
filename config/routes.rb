@@ -32,6 +32,12 @@ Rails.application.routes.draw do
     get '/wish_lists/:id', to: 'wish_lists#show'
     put '/wish_lists/:id', to: 'wish_lists#update'
     delete '/wish_lists/:id', to: 'wish_lists#destroy'
+    # Wishes Routes
+    get '/wishes', to: 'wishes#index'
+    post '/wishes', to: 'wishes#create'
+    get '/wishes/:id', to: 'wishes#show'
+    put '/wishes/:id', to: 'wishes#update'
+    delete '/wishes/:id', to: 'wishes#destroy'
   end
 end
  

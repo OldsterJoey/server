@@ -5,7 +5,12 @@ class ChildProfilesController < ApplicationController
     
     def index
         @child_profiles = ChildProfile.all
-        render json: @child_profiles, include:["wish_list"]
+        # render json: @child_profiles, include: ["wish_list", "wishes"]
+        render json: @child_profiles, include: {wish_list: {
+                                            include: { wishes: {
+                                                only: :name}},
+                                                only: :name
+                                                }}
     end
 
     def create
@@ -13,7 +18,12 @@ class ChildProfilesController < ApplicationController
         if @child_profile.errors.any?
             render json: @child_profile.errors, status: :unprocessable_entity 
         else
-            render json: @child_profile, status: 201
+            render json: @child_profile, include: {wish_list: {
+                                                    include: { wishes: {
+                                                                only: :name}},
+                                                    only: :name
+                                                    }}, 
+                                        status: 201
         end
     end
 
@@ -37,7 +47,13 @@ class ChildProfilesController < ApplicationController
 
     private
     def child_profile_params
-        params.permit(:id, :name, :wish_list_id)
+        params.permit(:id, 
+            :name, 
+            :wish_list_id,
+            wish_list_params:[:id,
+                            :name,
+                            wish_params: %i[name]]
+        )
     end
 
     def set_child_profile

@@ -21,6 +21,10 @@ Content-Type: application/json
 ### Show question id: 1
 GET http://localhost:3000/api/questions/1
 
+
+
+
+### CHILDREN ROUTES
 ### Child Profile Index Method
 GET http://localhost:3000/api/child_profiles
 
@@ -50,8 +54,77 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4M
     "name": "Jason"
 }
 
-### successfully deletes child with id 1
+### successfully deletes child with id 3
+DELETE http://localhost:3000/api/child_profiles/3
 
+
+
+
+### WISHLISTS
+### Index Method for Wishlists
+
+GET http://localhost:3000/api/wish_lists
+
+### Successfuly posts a wishlist
+POST http://localhost:3000/api/wish_lists
+Content-Type: application/json
+
+{
+    "name": "Wishlist",
+    "child_profile_id": 3
+}
+
+### Successfully updates Wishlist 2
+PUT http://localhost:3000/api/wish_lists/2
+Content-Type: application/json
+
+{
+    "name": "Christmas Wishlist",
+    "child_profile_id": 2
+}
+### Successfully deletes wishlist 2
+DELETE http://localhost:3000/api/wish_lists/2
+
+### Successfully deletes wishlist 1000
+DELETE http://localhost:3000/api/wish_lists/1000
+
+
+
+
+### WISHES
+### Index Method for Wishes
+
+GET http://localhost:3000/api/wishes
+
+### Successfuly posts a wish
+POST http://localhost:3000/api/wishes
+Content-Type: application/json
+
+{
+    "name": "doll",
+    "wish_list_id": 2
+}
+
+### adds another wish to the wishlist 2
+POST http://localhost:3000/api/wishes
+Content-Type: application/json
+
+{
+    "name": "fast rocket",
+    "wish_list_id": 2
+}
+
+### Successfully updates Wish 2
+PUT http://localhost:3000/api/wishes/2
+Content-Type: application/json
+
+{
+    "name": "snow rocket"
+}
+### Successfully deletes wishlist 2
+DELETE http://localhost:3000/api/wishes/2
+
+### Successfully deletes child profile 1
 DELETE http://localhost:3000/api/child_profiles/1
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
 
@@ -74,3 +147,7 @@ Content-Type: application/json
     "email": "joey@test.com",
     "password": "joey12321"
 }
+
+### Successfully deletes wishlist 1000
+DELETE http://localhost:3000/api/wishes/1000
+
