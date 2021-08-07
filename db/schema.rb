@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_022204) do
+ActiveRecord::Schema.define(version: 2021_08_07_041125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_07_022204) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "question_id"
     t.bigint "user_id", null: false
-    t.index ["question_id"], name: "index_admin_profiles_on_question_id"
     t.index ["user_id"], name: "index_admin_profiles_on_user_id"
   end
 
@@ -38,6 +36,8 @@ ActiveRecord::Schema.define(version: 2021_08_07_022204) do
     t.string "answer", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "admin_profile_id"
+    t.index ["admin_profile_id"], name: "index_questions_on_admin_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_08_07_022204) do
 
   add_foreign_key "admin_profiles", "users"
   add_foreign_key "child_profiles", "users"
+  add_foreign_key "questions", "admin_profiles"
   add_foreign_key "wish_lists", "child_profiles"
   add_foreign_key "wishes", "wish_lists"
 end
