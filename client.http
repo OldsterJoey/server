@@ -29,7 +29,7 @@ GET http://localhost:3000/api/child_profiles
 ### Successfuly creates a new child
 POST http://localhost:3000/api/child_profiles
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
 
 {
     "name": "Molly"
@@ -39,13 +39,13 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4M
 
 GET http://localhost:3000/api/child_profiles/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
 
 ### Successfully updates Child Profile 1
 
 PUT http://localhost:3000/api/child_profiles/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
 
 
 {
@@ -54,7 +54,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4M
 
 ### successfully deletes child with id 3
 DELETE http://localhost:3000/api/child_profiles/3
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
 
 ### WISHLIST ROUTES
 
@@ -121,7 +121,7 @@ DELETE http://localhost:3000/api/wishes/2
 
 ### Successfully deletes child profile 1
 DELETE http://localhost:3000/api/child_profiles/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgzOTI4MDQsInN1YiI6MX0.N8kZ7_EdlRVWc8M8HS6yasc2wiUDyn_LByya-p0IWes
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
 
 ### Creates a user
 POST  http://localhost:3000/api/auth/sign_up

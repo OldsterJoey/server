@@ -28,8 +28,9 @@ class ChildProfilesController < ApplicationController
     end
 
     def show
-        render json: @child_profile
+        render json: @child_profile.transform_child
     end
+
 
     def update
         @child_profile.update(child_profile_params)
@@ -47,7 +48,7 @@ class ChildProfilesController < ApplicationController
 
     private
     def child_profile_params
-        params.permit(:id, 
+        params.permit(:child_profile, :id, 
             :name, 
             :wish_list_id,
             wish_list_params:[:id,
@@ -65,7 +66,7 @@ class ChildProfilesController < ApplicationController
     end
 
     def check_ownership
-        if current_user.id != @child_profile.user.id
+        if current_user.id != @child_profile.user_id
             render json: {error: "You don't have permission to do that"}, status: 401
         end
     end
