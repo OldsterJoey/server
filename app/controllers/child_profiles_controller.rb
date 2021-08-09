@@ -1,7 +1,7 @@
 class ChildProfilesController < ApplicationController
     before_action :authenticate_user, except: [:index]
     before_action :set_child_profile, only: [:show, :update, :destroy]
-    before_action :check_ownership, only: [:show, :update, :destroy]
+    before_action :check_ownership, only: [:update, :destroy]
     
     def index
         @child_profiles = ChildProfile.all
@@ -66,7 +66,7 @@ class ChildProfilesController < ApplicationController
     end
 
     def check_ownership
-        if current_user.id != @child_profile.user_id
+        if current_user.id != @child_profile.user.id
             render json: {error: "You don't have permission to do that"}, status: 401
         end
     end
