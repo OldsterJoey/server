@@ -39,7 +39,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2M
 
 GET http://localhost:3000/api/child_profiles/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg2NTIxNjYsInN1YiI6MX0.NTW-C7wjdn2tTJAitcWYEV3eAlEIdAwbk9ZHfJTJTGQ
 
 ### Successfully updates Child Profile 1
 
@@ -121,7 +121,7 @@ DELETE http://localhost:3000/api/wishes/2
 
 ### Successfully deletes child profile 1
 DELETE http://localhost:3000/api/child_profiles/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg2NTIxNjYsInN1YiI6MX0.NTW-C7wjdn2tTJAitcWYEV3eAlEIdAwbk9ZHfJTJTGQ
 
 ### Creates a user
 POST  http://localhost:3000/api/auth/sign_up

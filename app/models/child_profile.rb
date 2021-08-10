@@ -1,8 +1,8 @@
 class ChildProfile < ApplicationRecord
     include ActiveModel::Serialization
-    has_one :wish_list
+    has_one :wish_list, dependent: :destroy
     belongs_to :user
-    has_many :wishes, through: :wish_list
+    has_many :wishes, through: :wish_list, dependent: :destroy
     accepts_nested_attributes_for :wish_list
 
     def transform_child 

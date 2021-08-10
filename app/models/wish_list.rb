@@ -1,5 +1,5 @@
 class WishList < ApplicationRecord
   belongs_to :child_profile
-  has_many :wishes
+  has_many :wishes, dependent: :destroy
   accepts_nested_attributes_for :wishes
 end
