@@ -7,10 +7,7 @@ class ChildProfilesController < ApplicationController
         @child_profiles = ChildProfile.all
         # render json: @child_profiles, include: ["wish_list", "wishes"]
         render json: @child_profiles, include: {wish_list: {
-                                            include: { wishes: {
-                                                only: :name}},
-                                                only: :name
-                                                }}
+                                            include: :wishes}}
     end
 
     def create
@@ -19,10 +16,8 @@ class ChildProfilesController < ApplicationController
             render json: @child_profile.errors, status: :unprocessable_entity 
         else
             render json: @child_profile, include: {wish_list: {
-                                                    include: { wishes: {
-                                                                only: :name}},
-                                                    only: :name
-                                                    }}, 
+                                                    include: :wishes},
+                                                    }, 
                                         status: 201
         end
     end

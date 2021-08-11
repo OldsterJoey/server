@@ -29,32 +29,32 @@ GET http://localhost:3000/api/child_profiles
 ### Successfuly creates a new child
 POST http://localhost:3000/api/child_profiles
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3NjY2NzEsInN1YiI6MX0.wKB3nGE9yDw5DXP-3CzPZaY2mADDlpKczq_Kej01yzo
 
 {
-    "name": "Molly"
+    "name": "Patrick"
 }
 
 ### Show child id: 1
 
 GET http://localhost:3000/api/child_profiles/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg2NTIxNjYsInN1YiI6MX0.NTW-C7wjdn2tTJAitcWYEV3eAlEIdAwbk9ZHfJTJTGQ
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3NjY2NzEsInN1YiI6MX0.wKB3nGE9yDw5DXP-3CzPZaY2mADDlpKczq_Kej01yzo
 
 ### Successfully updates Child Profile 1
 
 PUT http://localhost:3000/api/child_profiles/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3NjY2NzEsInN1YiI6MX0.wKB3nGE9yDw5DXP-3CzPZaY2mADDlpKczq_Kej01yzo
 
 
 {
-    "name": "Jason"
+    "name": "Mason"
 }
 
 ### successfully deletes child with id 3
 DELETE http://localhost:3000/api/child_profiles/3
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg0OTg2MjQsInN1YiI6MX0.PXdnshFkgPX0XKVlu864WssdrbVBzxacj8qwseOHD0A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3NjY2NzEsInN1YiI6MX0.wKB3nGE9yDw5DXP-3CzPZaY2mADDlpKczq_Kej01yzo
 
 ### WISHLIST ROUTES
 
@@ -67,8 +67,8 @@ POST http://localhost:3000/api/wish_lists
 Content-Type: application/json
 
 {
-    "name": "Wishlist",
-    "child_profile_id": 3
+    "name": "Molly's Wishlist",
+    "child_profile_id": 5
 }
 
 ### Successfully updates Wishlist 2
@@ -121,7 +121,7 @@ DELETE http://localhost:3000/api/wishes/2
 
 ### Successfully deletes child profile 1
 DELETE http://localhost:3000/api/child_profiles/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg2NTIxNjYsInN1YiI6MX0.NTW-C7wjdn2tTJAitcWYEV3eAlEIdAwbk9ZHfJTJTGQ
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3NjY2NzEsInN1YiI6MX0.wKB3nGE9yDw5DXP-3CzPZaY2mADDlpKczq_Kej01yzo
 
 ### Creates a user
 POST  http://localhost:3000/api/auth/sign_up
