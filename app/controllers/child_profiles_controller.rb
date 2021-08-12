@@ -1,7 +1,7 @@
 class ChildProfilesController < ApplicationController
-    # before_action :authenticate_user, except: [:index]
+    before_action :authenticate_user, except: [:index]
     before_action :set_child_profile, only: [:show, :update, :destroy]
-    # before_action :check_ownership, only: [:update, :destroy]
+    before_action :check_ownership, only: [:update, :destroy]
     
     def index
         @child_profiles = ChildProfile.all
