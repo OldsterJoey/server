@@ -37,7 +37,7 @@ class ChildProfilesController < ApplicationController
     end
 
     def destroy
-        @child_profile.delete
+        @child_profile.destroy
         render json: 204
     end
 

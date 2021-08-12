@@ -24,7 +24,7 @@ class WishesController < ApplicationController
     end
 
     def destroy
-        @wish.delete
+        @wish.destroy
         render json: 204
     end
 
