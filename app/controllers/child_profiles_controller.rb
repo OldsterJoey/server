@@ -61,7 +61,7 @@ class ChildProfilesController < ApplicationController
     end
 
     def check_ownership
-        if current_user.id != @child_profile.user.id
+        if current_user.id != @child_profile.user_id
             render json: {error: "You don't have permission to do that"}, status: 401
         end
     end
