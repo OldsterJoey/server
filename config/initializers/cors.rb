@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://localhost:3000', 'https://localhost:3001', 'https://127.0.0.1:5050', 'https://wishfully-server.herokuapp.com'
+    origins 'http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:5050', 'https://wishfully-server.herokuapp.com'
 
     resource '*',
       headers: :any,
