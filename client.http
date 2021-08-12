@@ -45,7 +45,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3NjY2N
 
 PUT http://localhost:3000/api/child_profiles/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3NjY2NzEsInN1YiI6MX0.wKB3nGE9yDw5DXP-3CzPZaY2mADDlpKczq_Kej01yzo
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg4MjczNTMsInN1YiI6MX0.kQoHYtxq8scfVsaDY9T8M2Zp4ABtHlSZ3K9EnFw4MfM
 
 
 {
