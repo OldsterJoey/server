@@ -1,13 +1,12 @@
 class ChildProfilesController < ApplicationController
-    # before_action :authenticate_user, except: [:index, :show]
+    before_action :authenticate_user, except: [:index, :show]
     before_action :set_child_profile, only: [:show, :update, :destroy]
     before_action :check_ownership, only: [:show, :update, :destroy]
     
     def index
         @child_profiles = ChildProfile.all
         # render json: @child_profiles, include: ["wish_list", "wishes"]
-        render json: @child_profiles, include: {wish_list: {
-                                            include: :wishes}}
+        render json: @child_profiles, include: {wish_list: {include: :wishes}}
     end
 
     def create
@@ -15,10 +14,7 @@ class ChildProfilesController < ApplicationController
         if @child_profile.errors.any?
             render json: @child_profile.errors, status: :unprocessable_entity 
         else
-            render json: @child_profile, include: {wish_list: {
-                                                    include: :wishes},
-                                                    }, 
-                                        status: 201
+            render json: @child_profile, include: {wish_list: {include: :wishes},}, status: 201
         end
     end
 
@@ -43,12 +39,10 @@ class ChildProfilesController < ApplicationController
 
     private
     def child_profile_params
-        params.permit(:child_profile, :id, 
+        params.permit(:child_profile, 
+            :id, 
             :name, 
-            :wish_list_id,
-            wish_list_params:[:id,
-                            :name,
-                            wish_params: %i[name]]
+            :wish_list_id, wish_list_params:[:id, :name, wish_params: %i[name]]
         )
     end
 

@@ -18,7 +18,7 @@ class AdminProfilesController < ApplicationController
     end
 
     def show
-        render json: @admin_profile
+        render json: @admin_profile.transform_admin
     end
 
     def update
@@ -42,6 +42,9 @@ class AdminProfilesController < ApplicationController
 
     def set_admin_profile
         @admin_profile = admin_profile.find(params[:id])
+        rescue
+            render json: {error: "Guardian is not found"}, status: 404
+        end
     end
 
     def check_ownership
