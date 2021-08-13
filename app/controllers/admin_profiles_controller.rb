@@ -41,6 +41,7 @@ class AdminProfilesController < ApplicationController
     end
 
     def set_admin_profile
+        begin
         @admin_profile = admin_profile.find(params[:id])
         rescue
             render json: {error: "Guardian is not found"}, status: 404
@@ -48,7 +49,7 @@ class AdminProfilesController < ApplicationController
     end
 
     def check_ownership
-        if current_user.id != @admin_profile.user.id
+        if current_user.id != @admin_profile.user_id
             render json: {error: "You don't have permission to do that"}, status: 401
         end
     end
