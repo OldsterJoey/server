@@ -21,6 +21,20 @@ class AdminProfilesController < ApplicationController
         render json: @admin_profile
     end
 
+    def update
+        @admin_profile.update(admin_profile_params)
+        if @admin_profile.errors.any?
+            render json: @admin_profile.errors, status: :unprocessable_entity 
+        else
+            render json: @admin_profile, status: 201
+        end
+    end
+
+    def destroy
+        @admin_profile.destroy
+        render json: 204
+    end
+
     private
     def admin_profile_params
         params.permit(:name)
