@@ -1,7 +1,7 @@
 class AdminProfilesController < ApplicationController
     before_action :authenticate_user, except: [:index]
     before_action :set_admin_profile, only: [:show]
-    before_action :check_ownership, only: [:update, :destroy]
+    before_action :check_ownership, only: [:show, :update, :destroy]
 
     def index
         @admin_profiles = admin_profile.all
