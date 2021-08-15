@@ -39,7 +39,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3NjY2N
 
 GET http://localhost:3000/api/child_profiles/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3NjY2NzEsInN1YiI6MX0.wKB3nGE9yDw5DXP-3CzPZaY2mADDlpKczq_Kej01yzo
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkwOTEyNjIsInN1YiI6MX0.OxO9E8VTCIZks-aML3ZizugF-VxWW3LYiY6enqalp4s
 
 ### Successfully updates Child Profile 1
 
