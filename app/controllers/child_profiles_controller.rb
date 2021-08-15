@@ -1,7 +1,7 @@
 class ChildProfilesController < ApplicationController
-    before_action :authenticate_user, except: [:show]
+    before_action :authenticate_user, except: [:index, :show]
     before_action :set_child_profile, only: [:show, :update, :destroy]
-    before_action :check_ownership, only: [:index, :show, :update, :destroy]
+    before_action :check_ownership, only: [:show, :update, :destroy]
     
     def index
         @child_profiles = ChildProfile.all
@@ -11,6 +11,7 @@ class ChildProfilesController < ApplicationController
 
     def create
         @child_profile = current_user.child_profiles.create(child_profile_params)
+        @child_profile.create_wish_list(wish_list_params) 
         if @child_profile.errors.any?
             render json: @child_profile.errors, status: :unprocessable_entity 
         else
