@@ -29,7 +29,7 @@ class WishListsController < ApplicationController
     end
 
     def show
-        render json: @wish_list
+        render json: @wish_list.transform_wish_list
     end
 
     private
