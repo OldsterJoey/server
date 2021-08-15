@@ -20,7 +20,7 @@ class ChildProfilesController < ApplicationController
     end
 
     def show
-        render json: @child_profile.transform_child
+        render json: @child_profile, include: {wish_list: {include: :wishes},}
     end
 
 

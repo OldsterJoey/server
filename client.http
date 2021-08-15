@@ -146,3 +146,12 @@ Content-Type: application/json
 ### Successfully deletes wishlist 1000
 DELETE http://localhost:3000/api/wishes/1000
 
+### Shows wishlist 1
+GET http://localhost:3000/api/wish_lists/1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkwOTEyNjIsInN1YiI6MX0.OxO9E8VTCIZks-aML3ZizugF-VxWW3LYiY6enqalp4s
+
+### Shows wish 1
+GET http://localhost:3000/api/wishes/1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkwOTEyNjIsInN1YiI6MX0.OxO9E8VTCIZks-aML3ZizugF-VxWW3LYiY6enqalp4s
