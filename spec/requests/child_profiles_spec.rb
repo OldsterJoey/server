@@ -1,4 +1,7 @@
 require 'rails_helper'
+require 'api_helper'
+
+
 
 describe 'child_profiles', type: :request do
     describe '/GET child_profiles' do
@@ -13,12 +16,16 @@ describe 'child_profiles', type: :request do
     end
 
     describe '/POST child_profiles' do
+    context 'with an authenticated user' do
+        let(:user) { create(:user) }
         it 'creates a new child_profile' do
             expect {
-                post '/api/child_profiles', params: { child_profile: { id: 1, name: 'Little Bimmy' } }
-        }.to change { ChildProfile.count }.from(0).to(1)
+                authenticated_header(request, user)
+                post '/api/child_profiles', params: { child_profile: { name: 'Little Bimmy' } }
+            }.to change { ChildProfile.count }.from(0).to(1)
 
-            expect(response).to have_http_status(201)
+                expect(response).to have_http_status(201)
+            end
         end
     end
 end
