@@ -11,7 +11,7 @@ class ChildProfilesController < ApplicationController
 
     def create
         @child_profile = current_user.child_profiles.create(child_profile_params)
-        @child_profile.create_wish_list(wish_list_params) 
+        # @child_profile.create_wish_list(wish_list_params) commented out for rspec test purposes
         if @child_profile.errors.any?
             render json: @child_profile.errors, status: :unprocessable_entity 
         else

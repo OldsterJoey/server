@@ -23,8 +23,8 @@ describe 'child_profiles', type: :request do
         let(:user) { create(:user) }
         it 'creates a new child_profile' do
             expect {
-                authenticated_header(user)
-                post '/api/child_profiles', params: { child_profile: { name: 'Little Bimmy' } }
+                
+                post '/api/child_profiles', params: { child_profile: { name: 'Little Bimmy' } }, headers: authenticated_header(user)
             }.to change { ChildProfile.count }.from(0).to(1)
 
                 expect(response).to have_http_status(201)
