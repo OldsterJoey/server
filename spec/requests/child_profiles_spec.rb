@@ -1,7 +1,10 @@
 require 'rails_helper'
 require 'api_helper'
 
-
+def authenticated_header(user)
+    token = Knock::AuthToken.new(payload: { sub: user.id }).token
+    { 'Authorization': "Bearer #{token}" }
+end
 
 describe 'child_profiles', type: :request do
     describe '/GET child_profiles' do
@@ -20,7 +23,7 @@ describe 'child_profiles', type: :request do
         let(:user) { create(:user) }
         it 'creates a new child_profile' do
             expect {
-                authenticated_header(request, user)
+                authenticated_header(user)
                 post '/api/child_profiles', params: { child_profile: { name: 'Little Bimmy' } }
             }.to change { ChildProfile.count }.from(0).to(1)
 
