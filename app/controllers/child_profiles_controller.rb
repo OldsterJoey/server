@@ -5,13 +5,11 @@ class ChildProfilesController < ApplicationController
     
     def index
         @child_profiles = ChildProfile.all
-        render json: @child_profiles, include: ["wish_list", "wishes"]
         render json: @child_profiles, include: {wish_list: {include: :wishes}}
     end
 
     def create
         @child_profile = current_user.child_profiles.create(child_profile_params)
-        @child_profile.create_wish_list(wish_list_params) 
         if @child_profile.errors.any?
             render json: @child_profile.errors, status: :unprocessable_entity 
         else
