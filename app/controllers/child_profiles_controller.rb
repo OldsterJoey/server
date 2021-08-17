@@ -5,7 +5,7 @@ class ChildProfilesController < ApplicationController
     
     def index
         @child_profiles = ChildProfile.all
-        # render json: @child_profiles, include: ["wish_list", "wishes"]
+        render json: @child_profiles, include: ["wish_list", "wishes"]
         render json: @child_profiles, include: {wish_list: {include: :wishes}}
     end
 
