@@ -35,11 +35,12 @@ describe 'child_profiles', type: :request do
     describe '/DELETE child_profiles' do
     context 'with an authenticated user' do
         let(:user) { create(:user) }
-         it 'successfully deletes a child profile' do
-                FactoryBot.create(:child_profile, user_id: 1 ,name: 'Little Slimmy',)
-                delete '/api/child_profiles/1', headers: authenticated_header(user)
+        let!(:child_profile) { FactoryBot.create(:child_profile, user_id: 1 ,name: 'Little Slimmy',) } 
 
-                expect(response).to have_http_status(404)
+        it 'successfully deletes a child profile' do
+            expect {
+                delete "/api/child_profiles/#{child_profile.id}", headers: authenticated_header(user)
+        }.to change { ChildProfile.count }.from(1).to(0)
             end
         end
     end
