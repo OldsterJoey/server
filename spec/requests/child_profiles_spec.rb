@@ -39,7 +39,7 @@ describe 'child_profiles', type: :request do
 
         it 'successfully deletes a child profile' do
             expect {
-                delete "/api/child_profiles/#{child_profile.id}", headers: authenticated_header(user)
+                delete "/api/child_profiles/1", params: { child_profile { name: 'Little Slimmy' } }, headers: authenticated_header(user)
         }.to change { ChildProfile.count }.from(1).to(0)
             end
         end
