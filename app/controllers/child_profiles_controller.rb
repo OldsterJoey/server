@@ -1,11 +1,10 @@
 class ChildProfilesController < ApplicationController
     before_action :authenticate_user, except: [:index, :show]
     before_action :set_child_profile, only: [:show, :update, :destroy]
-    before_action :check_ownership, only: [:show, :update, :destroy]
+    # before_action :check_ownership, only: [:show, :update, :destroy]
     
     def index
         @child_profiles = ChildProfile.all
-        # render json: @child_profiles, include: ["wish_list", "wishes"]
         render json: @child_profiles, include: {wish_list: {include: :wishes}}
     end
 
@@ -20,7 +19,7 @@ class ChildProfilesController < ApplicationController
     end
 
     def show
-        render json: @child_profile.transform_child
+        render json: @child_profile, include: {wish_list: {include: :wishes},}
     end
 
 

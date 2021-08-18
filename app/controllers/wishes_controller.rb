@@ -10,7 +10,7 @@ class WishesController < ApplicationController
         if @wish.errors.any?
             render json: @wish.errors, status: :unprocessable_entity 
         else
-            render json: @wish, status: 201
+            render json:  {wish: @wish, child: @wish.wish_list.child_profile.id}, status: 200
         end
     end
 

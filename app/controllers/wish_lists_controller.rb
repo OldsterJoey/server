@@ -29,12 +29,13 @@ class WishListsController < ApplicationController
     end
 
     def show
-        render json: @wish_list
+        render json: @wish_list, include: :wishes
     end
 
     private
     def wish_list_params
-        params.permit(:id, :name, :child_profile_id)
+        params.permit(:id, :name, :child_profile_id,
+        wish_params: %i[name])
     end
 
     def set_wish_list
