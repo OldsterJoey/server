@@ -18,7 +18,13 @@ class ChildProfilesController < ApplicationController
     end
 
     def show
-        render json: @child_profile, include: {wish_list: {include: :wishes},}
+        @child_profile.transform_child
+        if @child_profile.errors.any?
+            render json: @child_profile.errors, status: :unprocessable_entity 
+        else
+        render json: @child_profile
+        # , include: {wish_list: {include: :wishes}}
+        end
     end
 
 
